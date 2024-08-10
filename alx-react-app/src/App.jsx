@@ -38,9 +38,9 @@ function App() {
       <MainContent />
       <Footer />
       <UserProfile 
-        name="biniam"
-        age="35"
-        bio="I love walking and socer"
+        name="Alice"
+        age="25"
+        bio="Loves hiking and photography"
         />
     </>
   )
