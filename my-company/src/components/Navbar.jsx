@@ -1,40 +1,37 @@
 import React from "react";
-import {
-  Nav,
-  NavLogo,
-  Bars,
-  NavMenu,
-  NavLink,
-  NavBtn,
-  NavBtnLink,
-} from "./Navbar/NavbarElements";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <>
-      <Nav>
-        <NavLogo to="/">Logo</NavLogo>
-        <Bars />
-        <NavMenu>
-          <NavLink to="/" activeStyle={{ color: "black" }}>
-            Home
-          </NavLink>
-          <NavLink to="/about" activeStyle={{ color: "black" }}>
-            About
-          </NavLink>
-          <NavLink to="/services" activeStyle={{ color: "black" }}>
-            Services
-          </NavLink>
-          <NavLink to="/contact" activeStyle={{ color: "black" }}>
-            Contact
-          </NavLink>
-          <NavBtn>
-            <NavBtnLink to="/sign-up">Sign Up</NavBtnLink>
-          </NavBtn>
-        </NavMenu>
-      </Nav>
-    </>
+    <nav style={{ backgroundColor: "orangered", padding: "10px" }}>
+      <Link
+        to="/"
+        style={{ color: "white", textDecoration: "none", marginRight: "20px" }}
+      >
+        Logo
+      </Link>
+      <Link
+        to="/"
+        style={{ color: "white", textDecoration: "none", marginRight: "20px" }}
+      >
+        Home
+      </Link>
+      <Link
+        to="/about"
+        style={{ color: "white", textDecoration: "none", marginRight: "20px" }}
+      >
+        About
+      </Link>
+      <Link
+        to="/services"
+        style={{ color: "white", textDecoration: "none", marginRight: "20px" }}
+      >
+        Services
+      </Link>
+      <Link to="/contact" style={{ color: "white", textDecoration: "none" }}>
+        Contact
+      </Link>
+    </nav>
   );
 };
 
