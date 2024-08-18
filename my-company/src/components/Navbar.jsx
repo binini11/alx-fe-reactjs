@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -6,7 +7,12 @@ const Navbar = () => {
     <nav style={{ backgroundColor: "orangered", padding: "10px" }}>
       <Link
         to="/"
-        style={{ color: "white", textDecoration: "none", marginRight: "20px" }}
+        style={{
+          display: "justifyContent",
+          color: "white",
+          textDecoration: "none",
+          marginRight: "20px",
+        }}
       >
         Logo
       </Link>
