@@ -1,9 +1,9 @@
+// RecipeList.jsx
 import React from "react";
-import useRecipeStore from "./recipeStore";
+import useRecipeStore from "./recipeStore.js";
 
 const RecipeList = ({ onEdit }) => {
-  const recipes = useRecipeStore((state) => state.recipes);
-  const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
+  const recipes = useRecipeStore((state) => state.filteredRecipes); // Use filteredRecipes
 
   return (
     <div>
@@ -12,7 +12,6 @@ const RecipeList = ({ onEdit }) => {
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
           <button onClick={() => onEdit(recipe)}>Edit</button>
-          <button onClick={() => deleteRecipe(recipe.id)}>Delete</button>
         </div>
       ))}
     </div>

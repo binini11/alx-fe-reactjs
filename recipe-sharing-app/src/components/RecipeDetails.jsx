@@ -1,5 +1,6 @@
+//RecipeDtails.jsx
 import React from "react";
-import useRecipeStore from "./recipeStore";
+import useRecipeStore from "./recipeStore.js";
 import EditRecipeForm from "./EditRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";
 

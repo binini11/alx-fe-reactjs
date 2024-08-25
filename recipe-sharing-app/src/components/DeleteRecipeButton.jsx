@@ -1,6 +1,7 @@
+//DeleteRecipeButton.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import useRecipeStore from "./recipeStore";
+import useRecipeStore from "./recipeStore.js";
 
 const DeleteRecipeButton = ({ recipeId }) => {
   const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
