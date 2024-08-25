@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RecipeList from "./components/RecipeList";
 import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeDetails from "./components/RecipeDetails";
-import SearchBar from "./components/SearchBar"; // Import the SearchBar component
+import SearchBar from "./components/SearchBar";
+import FavoritesList from "./FavoritesList";
 
 function App() {
   const [currentRecipe, setCurrentRecipe] = useState(null);
@@ -29,6 +30,7 @@ function App() {
                   setCurrentRecipe={setCurrentRecipe}
                 />
                 <RecipeList onEdit={handleEdit} />
+                <FavoritesList />
               </>
             }
           />
