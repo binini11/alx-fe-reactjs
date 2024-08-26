@@ -10,8 +10,8 @@ const EditRecipeForm = ({ recipeId }) => {
   const [description, setDescription] = useState(recipe.description);
 
   const handleUpdate = (event) => {
-    event.preventDefault();
-
+    event.preventDefault(); // Prevent the default form submission behavior
+    // Update the recipe details (use the updateRecipe action)
     useRecipeStore.getState().updateRecipe({
       ...recipe,
       title,
@@ -20,7 +20,7 @@ const EditRecipeForm = ({ recipeId }) => {
   };
 
   return (
-    <div>
+    <form onSubmit={handleUpdate}>
       <input
         type="text"
         value={title}
@@ -32,10 +32,8 @@ const EditRecipeForm = ({ recipeId }) => {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Description"
       />
-      <button type="button" onClick={handleUpdate}>
-        Save Changes
-      </button>
-    </div>
+      <button type="submit">Save Changes</button>
+    </form>
   );
 };
 
