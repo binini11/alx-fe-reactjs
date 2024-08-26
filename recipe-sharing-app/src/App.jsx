@@ -1,7 +1,7 @@
 // App.jsx
 import React from "react";
 import RecipeList from "./RecipeList";
-import AddRecipeForm from "./AddRecipeForm";
+import AddRecipeForm from "./components/AddRecipeForm";
 
 const App = () => {
   return (
