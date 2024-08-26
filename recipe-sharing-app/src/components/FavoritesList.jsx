@@ -1,6 +1,6 @@
 // FavoritesList.jsx
 import React from "react";
-import { useRecipeStore } from "./recipeStore"; // Adjust the import path
+import { useRecipeStore } from "../recipeStore"; // Adjust the import path
 
 const FavoritesList = () => {
   const favorites = useRecipeStore((state) =>
