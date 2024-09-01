@@ -24,17 +24,17 @@ const FormikForm = () => {
           <div>
             <label>Username:</label>
             <Field type="text" name="username" />
-            <ErrorMessage name="username" component="div" />
+            <ErrorMessage name="username" component="div" style={{ color: 'red' }} />
           </div>
           <div>
             <label>Email:</label>
             <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
           </div>
           <div>
             <label>Password:</label>
             <Field type="password" name="password" />
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage name="password" component="div" style={{ color: 'red' }} />
           </div>
           <button type="submit" disabled={isSubmitting}>Register</button>
         </Form>
