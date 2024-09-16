@@ -7,7 +7,7 @@ import AddRecipeForm from './components/AddRecipeForm';
 function App() {
   return (
     <Router>
-      <nav className="p-4 bg-gray-800 text-white">
+      <nav className="w-4/5 mx-auto p-4 bg-gray-800 text-white ">
         <Link to="/" className="mr-4">Home</Link>
         <Link to="/add-recipe">Add Recipe</Link>
       </nav>
