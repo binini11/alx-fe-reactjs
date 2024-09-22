@@ -22,7 +22,7 @@ const Search = () => {
       const response = await axios.get(`${BASE_URL}${username}`);
       setUserData(response.data);
     } catch (error) {
-      setError("Looks like we can't find the user.");
+      setError("Looks like we can\'t find the user.");
     } finally {
       setIsLoading(false);
     }
