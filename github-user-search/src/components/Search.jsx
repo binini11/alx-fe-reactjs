@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useSearchParams } from 'react-router-dom';
-
-// Assuming you have a `githubService.js` file with the `buildAdvancedSearchUrl` function
-import { buildAdvancedSearchUrl } from './githubService';
+import { fetchUserData } from './services/githubService'; // Assuming githubService.js is in the 'services' directory
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -50,9 +47,8 @@ const Search = () => {
     setError(null);
 
     try {
-      const url = buildAdvancedSearchUrl(username, location, minRepos);
-      const response = await axios.get(url);
-      setUserData(response.data.items);
+      const userData = await fetchUserData(username, location, minRepos);
+      setUserData(userData);
       setSearchParams({ username, location, minRepos });
     } catch (error) {
       setError("Looks like we cant find the user.");
