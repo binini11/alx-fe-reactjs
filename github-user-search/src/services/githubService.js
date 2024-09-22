@@ -8,9 +8,11 @@ export const fetchUserData = async (searchTerm, location, minRepos) => {
       queryString += `+repos:>=${minRepos}`;
     }
 
-    const url = `https://api.github.com/search/users?${queryString}`;
+    const baseUrl = 'https://api.github.com/search/users?'; // 
+    const url = baseUrl + queryString; 
+
     const response = await axios.get(url);
-    return response.data.items
+    return response.data.items; 
   } catch (error) {
     throw error;
   }
