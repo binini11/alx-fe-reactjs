@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchUserData } from './services/githubService'; // Assuming githubService.js is in the 'services' directory
+import { fetchUserData } from '../services/githubService';
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -25,7 +25,9 @@ const Search = () => {
   }, [searchParams]);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const name = e.target.name;
+    const value = e.target.value;
+  
     switch (name) {
       case 'username':
         setUsername(value);
@@ -40,7 +42,6 @@ const Search = () => {
         break;
     }
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
