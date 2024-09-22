@@ -9,7 +9,7 @@ export const fetchUserData = async (searchTerm, location, minRepos) => {
     }
 
     const response = await axios.get(`https://api.github.com/search/users?${queryString}`);
-    return response.data.items;
+    return response.data.items; // Access the list of users from the response
   } catch (error) {
     throw error;
   }
