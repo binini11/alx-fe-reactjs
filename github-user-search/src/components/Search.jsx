@@ -20,7 +20,7 @@ const Search = () => {
       const response = await axios.get(`https://api.github.com/search/users?q=${searchTerm}`);
       setUserData(response.data.items);
     } catch (error) {
-      setError('Looks like we can\'t find the user.');
+      setError('Looks like we can\'t find the user');
     } finally {
       setIsLoading(false);
     }
