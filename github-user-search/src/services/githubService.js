@@ -1,19 +1,8 @@
-export const fetchUserData = async (searchTerm, location, minRepos) => {
-  try {
-    let queryString = `q=${searchTerm}`;
-    if (location) {
-      queryString += `+location:${location}`;
-    }
-    if (minRepos) {
-      queryString += `+repos:>=${minRepos}`;
-    }
+import axios from 'axios';
 
-    const baseUrl = 'https://api.github.com/search/users?'; // 
-    const url = baseUrl + queryString; 
+const BASE_URL = 'https://api.github.com/users/';
 
-    const response = await axios.get(url);
-    return response.data.items; 
-  } catch (error) {
-    throw error;
-  }
+export const fetchUserData = async (username) => {
+  const response = await axios.get(`${BASE_URL}${username}`);
+  return response;
 };
