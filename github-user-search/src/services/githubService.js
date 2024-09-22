@@ -13,8 +13,12 @@ const buildAdvancedSearchUrl = (username, location, minRepos) => {
 const fetchUserData = async (username, location, minRepos) => {
   try {
     const url = buildAdvancedSearchUrl(username, location, minRepos);
-    const response = await axios.get(url);
-    return response.data.items;
+    if (url === 'https://api.github.com/search/users?q=') {
+      
+    } else {
+      const response = await axios.get(url);
+      return response.data.items;
+    }
   } catch (error) {
     throw new Error('Failed to fetch user data: ' + error.message);
   }
