@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com/users/';
+
+
+const fetchUserData = async (username) => {
+  const BASE_URL = 'https://api.github.com/users/';
+  const response = await axios.get(`${BASE_URL}${username}`);
+  return response;
+};
 
 const Search = () => {
   const [username, setUsername] = useState('');
@@ -19,7 +25,7 @@ const Search = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`${BASE_URL}${username}`);
+      const response = await fetchUserData(username);
       setUserData(response.data);
     } catch (error) {
       setError("Looks like we cant find the user.");
