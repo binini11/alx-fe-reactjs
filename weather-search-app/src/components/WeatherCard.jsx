@@ -9,6 +9,7 @@ const WeatherCard = ({ weather }) => {
     <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="p-4">
         <h2 className=" inline-block text-2xl font-bold mb-2">{weather.name}</h2>
+        <h3 className=" inline-block text-gray-700 ml-2">{weather.weather[0].description}</h3>
         <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="Weather icon" className="inline-block " />
         <p className="text-gray-700"><FontAwesomeIcon icon={faTemperatureHigh} /> Temperature: {weather.main.temp}°C</p>
         <p className="text-gray-700"><FontAwesomeIcon icon={faTint} /> Humidity: {weather.main.humidity}%</p>

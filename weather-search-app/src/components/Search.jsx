@@ -24,11 +24,11 @@ const Search = ({ onSearch, onReset }) => {
         placeholder="Enter city name"
         className="border p-2 mr-2 flex-grow"
       />
-      <button type="submit" className="bg-blue-500 text-white p-2 mr-2">
+      <button type="submit" className="bg-blue-500 text-white rounded-2xl p-2 mr-1">
         Search
       </button>
-      <button type="button" onClick={handleReset} className=" p-2 rounded ">
-        <FontAwesomeIcon icon={faBed} />
+      <button type="button" onClick={handleReset} className=" p-2 bg-red-700 text-white rounded-2xl ">
+        {/*<FontAwesomeIcon icon={faTimesCircle} />*/} Clear
       </button>
     </form>
   );
