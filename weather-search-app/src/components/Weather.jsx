@@ -14,7 +14,7 @@ const Weather = () => {
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${YOUR_API_KEY}&units=metric`);
       setWeather(response.data);
-      console.log(response.data)
+      console.log(response.data);
       setError('');
     } catch (error) {
       setError('City not found or network error');
