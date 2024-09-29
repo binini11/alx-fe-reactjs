@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Search from './Search';
-import WeatherCard from './WeatherCard';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Search from "./Search";
+import WeatherCard from "./WeatherCard";
 
-const API_KEY = 'ca0dd5136868c9a0f4f44693345f2b70';
+const API_KEY = "ca0dd5136868c9a0f4f44693345f2b70";
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
-  const [error, setError] = useState('');
-  const [city, setCity] = useState('');
+  const [error, setError] = useState("");
+  const [city, setCity] = useState("");
 
   const fetchWeather = async (city) => {
     try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+      const response = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      );
       setWeather(response.data);
       console.log(response.data);
-      setError('');
+      setError("");
     } catch (error) {
-      setError('City not found or network error');
+      setError("City not found or network error");
       setWeather(null);
     }
   };
@@ -28,9 +30,9 @@ const Weather = () => {
   };
 
   const handleReset = () => {
-    setCity('');
+    setCity("");
     setWeather(null);
-    setError('');
+    setError("");
   };
 
   useEffect(() => {
