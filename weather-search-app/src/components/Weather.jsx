@@ -24,7 +24,7 @@ const Weather = () => {
       setError("");
     } catch (error) {
       setError(
-        `\'${city}\' City not found or request failed. Make sure to type the city name correctlyand use text only.`
+        `\'${city}\' City not found or request failed. Make sure to type the city name correctly and use text only.`
       );
       setWeather(null);
     }

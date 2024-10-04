@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTemperatureHigh,
+  faThermometerFull,
   faTint,
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +13,7 @@ const WeatherCard = ({ weather }) => {
   if (!weather) return null;
 
   return (
-    <div className="ma-w-sm mx-auto border bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="max-w-sm mx-auto border bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="p-4">
         <h2 className="inline-block text-2xl font-bold mb-2">{weather.name}</h2>
         <h3 className="inline-block text-gray-700 ml-2">
@@ -26,6 +27,10 @@ const WeatherCard = ({ weather }) => {
         <p className="text-gray-700">
           <FontAwesomeIcon icon={faTemperatureHigh} />
           Temprature: {weather.main.temp} °C
+        </p>
+        <p className="text-gray-700">
+          <FontAwesomeIcon icon={faThermometerFull} />
+          Feels Like: {weather.main.feels_like} °C
         </p>
         <p className="text-gray-700">
           <FontAwesomeIcon icon={faTint} />
