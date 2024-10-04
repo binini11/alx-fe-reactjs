@@ -23,7 +23,9 @@ const Weather = () => {
       console.log(response);
       setError("");
     } catch (error) {
-      setError(`\'${city}\' City not found or network error`);
+      setError(
+        `\'${city}\' City not found or request failed. Make sure to type the city name correctlyand use text only.`
+      );
       setWeather(null);
     }
   };
