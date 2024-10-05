@@ -3,8 +3,6 @@ import axios from "axios";
 import Search from "./Search";
 import WeatherCard from "./WeatherCard";
 
-//const API_KEY = "ca0dd5136868c9a0f4f44693345f2b70";
-
 /* my Weather arrow function has is working with three states, three functions and one hook
  to accomplish the desired outcome.*/
 const Weather = () => {
