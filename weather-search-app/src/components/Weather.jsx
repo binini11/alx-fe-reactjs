@@ -3,7 +3,7 @@ import axios from "axios";
 import Search from "./Search";
 import WeatherCard from "./WeatherCard";
 
-const API_KEY = "ca0dd5136868c9a0f4f44693345f2b70";
+//const API_KEY = "ca0dd5136868c9a0f4f44693345f2b70";
 
 /* my Weather arrow function has is working with three states, three functions and one hook
  to accomplish the desired outcome.*/
@@ -17,7 +17,9 @@ const Weather = () => {
   const fetchWeather = async (city) => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
+          import.meta.env.VITE_API_KEY
+        }&units=metric`
       );
       setWeather(response.data);
       console.log(response);
