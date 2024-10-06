@@ -19,11 +19,7 @@ const WeatherCard = ({ weather }) => {
         <h3 className="inline-block text-gray-700 ml-2">
           {weather.weather[0].description}
         </h3>
-        <img
-          src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-          alt="Weather icon"
-          className="inline-block"
-        />
+
         <p className="text-gray-700">
           <FontAwesomeIcon icon={faTemperatureHigh} />
           Temprature: {weather.main.temp} °C
