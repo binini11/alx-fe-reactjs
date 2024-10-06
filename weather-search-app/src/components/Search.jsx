@@ -38,6 +38,7 @@ const Search = ({ onSearch, onReset }) => {
         />
 
         <button
+          aria-label="Search"
           type="submit"
           className="sm:inline-block bg-transparent
         hover:bg-blue-500 text-blue-700
@@ -48,6 +49,7 @@ const Search = ({ onSearch, onReset }) => {
           Search
         </button>
         <button
+          aria-label="Clear"
           type="button"
           onClick={handleReset}
           className="sm:inline-block mb-2 bg-transparent hover:bg-red-500 text-red-700
