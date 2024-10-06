@@ -44,12 +44,12 @@ const Weather = () => {
   };
 
   /* this hoook runs on on the dependency city state
-  and runs on every five minutes interval.
+  and runs on every three minutes interval.
   and everytime the its cleaned witht the clearInterval built in function*/
   useEffect(() => {
     if (city) {
       fetchWeather(city);
-      const interval = setInterval(() => fetchWeather(city), 300000);
+      const interval = setInterval(() => fetchWeather(city), 180000);
       return () => clearInterval(interval);
     }
   }, [city]);
