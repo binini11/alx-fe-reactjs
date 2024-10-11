@@ -31,6 +31,7 @@ const Search = ({ onSearch, onReset }) => {
       >
         <input
           type="text"
+          aria-label="City Name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           placeholder="Enter City name"
