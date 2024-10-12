@@ -8,34 +8,54 @@ import {
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
 
-const WeatherCard = ({ weather }) => {
+const WeatherCard = ({ weather, theme }) => {
   if (!weather) return null;
 
   return (
-    <div className="max-w-sm mx-auto border bg-white shadow-lg rounded-lg overflow-hidden md:max-w-md lg:max-w-lg">
-      <div className="p-4 md:p-6 lg:p-8">
-        <h2 className="inline-block text-2xl font-bold mb-2 sm:text-3xl md:text-4xl">
+    <div
+      className={`max-w-md mx-auto border rounded-xl overflow-hidden shadow-md transform transition-all hover:scale-105 duration-300 ${
+        theme === "light"
+          ? "bg-white border-gray-200"
+          : "bg-gray-700 border-gray-600"
+      }`}
+    >
+      <div className="p-6">
+        <h2
+          className={`text-3xl font-semibold mb-3 ${
+            theme === "light" ? "text-gray-900" : "text-white"
+          }`}
+        >
           {weather.name}
         </h2>
-        <h3 className="inline-block text-gray-700 ml-2 sm:text-lg md:text-xl lg:text-2xl">
+        <h3
+          className={`text-lg mb-4 ${
+            theme === "light" ? "text-gray-600" : "text-gray-300"
+          }`}
+        >
           {weather.weather[0].description}
         </h3>
-
-        <p className="text-gray-700 mt-2 md:mt-4 lg:mt-6">
-          <FontAwesomeIcon icon={faTemperatureHigh} /> Temperature:{" "}
-          {weather.main.temp} °C
-        </p>
-        <p className="text-gray-700 mt-2 md:mt-4 lg:mt-6">
-          <FontAwesomeIcon icon={faThermometerHalf} />{" "}
-          <FontAwesomeIcon icon={faHandHoldingHeart} /> Feels Like:{" "}
-          {weather.main.feels_like} °C
-        </p>
-        <p className="text-gray-700 mt-2 md:mt-4 lg:mt-6">
-          <FontAwesomeIcon icon={faTint} /> Humidity: {weather.main.humidity} %
-        </p>
-        <p className="text-gray-700 mt-2 md:mt-4 lg:mt-6">
-          <FontAwesomeIcon icon={faWind} /> Wind: {weather.wind.speed} km/h
-        </p>
+        <div
+          className={`space-y-2 ${
+            theme === "light" ? "text-gray-700" : "text-gray-300"
+          }`}
+        >
+          <p>
+            <FontAwesomeIcon icon={faTemperatureHigh} /> Temperature:{" "}
+            {weather.main.temp} °C
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faThermometerHalf} />{" "}
+            <FontAwesomeIcon icon={faHandHoldingHeart} /> Feels Like:{" "}
+            {weather.main.feels_like} °C
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faTint} /> Humidity: {weather.main.humidity}{" "}
+            %
+          </p>
+          <p>
+            <FontAwesomeIcon icon={faWind} /> Wind: {weather.wind.speed} km/h
+          </p>
+        </div>
       </div>
     </div>
   );
