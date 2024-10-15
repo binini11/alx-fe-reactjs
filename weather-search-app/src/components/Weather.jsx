@@ -3,6 +3,8 @@ import axios from "axios";
 import Search from "./Search";
 import WeatherCard from "./WeatherCard";
 import WeeklyForecast from "./WeeklyForecast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
@@ -13,6 +15,17 @@ const Weather = () => {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+
+  // Update body class based on theme
+  useEffect(() => {
+    if (theme === "light") {
+      document.body.classList.remove("dark-theme");
+      document.body.classList.add("light-theme");
+    } else {
+      document.body.classList.remove("light-theme");
+      document.body.classList.add("dark-theme");
+    }
+  }, [theme]);
 
   const saveToLocalStorage = (city) => {
     let searches = JSON.parse(localStorage.getItem("recentSearches")) || [];
@@ -106,17 +119,15 @@ const Weather = () => {
 
   return (
     <div
-      className={`max-w-4xl border mx-auto p-6 ${
+      className={`max-w-4xl border mx-auto p-4 ${
         theme === "light" ? "bg-white" : "bg-gray-800"
-      } text-gray-900 ${
-        theme === "light" ? "text-black" : "text-white"
-      } rounded-xl`}
+      } text-gray-900 ${theme === "light" ? "text-black" : "text-white"}`}
     >
       <button
         onClick={toggleTheme}
-        className="mb-4 py-2 px-4 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600 transition duration-300"
+        className="mb-4 flex justify-center items-center"
       >
-        Toggle Theme
+        <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} size="2x" />
       </button>
       <div className="max-w-lg mx-auto">
         <Search onSearch={handleSearch} onReset={handleReset} theme={theme} />

@@ -14,21 +14,21 @@ const WeeklyForecast = ({ forecast, theme }) => {
   return (
     <div className="weekly-forecast mt-8">
       <h2 className="text-3xl font-bold mb-6 text-center">5-Day Forecast</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {dailyForecasts.map((day, index) => (
           <div
             key={index}
-            className={`max-w-md mx-auto p-6 border rounded-xl shadow-md transform transition-all hover:scale-105 duration-300 ${
+            className={`max-w-md mx-auto p-6 border-2 rounded-lg shadow-xl transform transition-all hover:scale-105 duration-300 ${
               theme === "light"
-                ? "bg-white border-gray-200"
-                : "bg-gray-700 border-gray-600"
+                ? "bg-green-100 border-green-300"
+                : "bg-green-900 border-green-700"
             }`}
           >
-            <h3 className="font-semibold mb-2">
+            <h3 className="font-bold mb-2">
               {new Date(day.dt * 1000).toLocaleDateString()}
             </h3>
             <div
-              className={`space-y-2 ${
+              className={`text-lg space-y-2 ${
                 theme === "light" ? "text-gray-700" : "text-gray-300"
               }`}
             >

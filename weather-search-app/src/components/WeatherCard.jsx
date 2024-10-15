@@ -13,15 +13,15 @@ const WeatherCard = ({ weather, theme }) => {
 
   return (
     <div
-      className={`max-w-md mx-auto border rounded-xl overflow-hidden shadow-md transform transition-all hover:scale-105 duration-300 ${
+      className={`max-w-md mx-auto border-2 rounded-lg overflow-hidden shadow-xl transform transition-all hover:scale-105 duration-300 ${
         theme === "light"
-          ? "bg-white border-gray-200"
-          : "bg-gray-700 border-gray-600"
+          ? "bg-blue-100 border-blue-300"
+          : "bg-blue-900 border-blue-700"
       }`}
     >
       <div className="p-6">
         <h2
-          className={`text-3xl font-semibold mb-3 ${
+          className={`text-2xl font-bold mb-2 sm:text-3xl md:text-4xl ${
             theme === "light" ? "text-gray-900" : "text-white"
           }`}
         >
@@ -29,13 +29,13 @@ const WeatherCard = ({ weather, theme }) => {
         </h2>
         <h3
           className={`text-lg mb-4 ${
-            theme === "light" ? "text-gray-600" : "text-gray-300"
+            theme === "light" ? "text-gray-700" : "text-gray-300"
           }`}
         >
           {weather.weather[0].description}
         </h3>
         <div
-          className={`space-y-2 ${
+          className={`text-lg space-y-2 ${
             theme === "light" ? "text-gray-700" : "text-gray-300"
           }`}
         >
