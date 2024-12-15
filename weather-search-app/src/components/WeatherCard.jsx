@@ -7,13 +7,17 @@ import {
   faTint,
   faWind,
 } from "@fortawesome/free-solid-svg-icons";
+import HourlyForecast from "./HourlyForecast";
 
-const WeatherCard = ({ weather, theme }) => {
+const WeatherCard = ({ weather, theme, apiKey }) => {
   if (!weather) return null;
+
+  // Assuming the city name comes from the weather data
+  const city = weather.name;
 
   return (
     <div
-      className={`max-w-md mx-auto border-2 rounded-lg overflow-hidden shadow-xl transform transition-all hover:scale-105 duration-300 ${
+      className={`max-w-6xl mx-auto border-2 rounded-lg text-center overflow-hidden shadow-xl transform transition-all hover:scale-105 duration-300 ${
         theme === "light"
           ? "bg-blue-100 border-blue-300"
           : "bg-blue-900 border-blue-700"
@@ -57,6 +61,9 @@ const WeatherCard = ({ weather, theme }) => {
           </p>
         </div>
       </div>
+      
+      {/* Integrating the HourlyForecast component */}
+      <HourlyForecast city={city} apiKey={apiKey} />
     </div>
   );
 };
